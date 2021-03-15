@@ -4005,12 +4005,53 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="4.3688" y1="-5.7912" x2="1.778" y2="-5.7912" width="0.127" layer="51"/>
 <wire x1="1.778" y1="-5.7912" x2="1.778" y2="1.9812" width="0.127" layer="51"/>
 </package>
+<package name="OPEN-SMARTTFCARDBREAKOUT">
+<pad name="P1" x="5.08" y="10.16" drill="1" shape="square"/>
+<pad name="P2" x="5.08" y="7.62" drill="1"/>
+<pad name="P3" x="5.08" y="5.08" drill="1"/>
+<pad name="P4" x="5.08" y="2.54" drill="1"/>
+<pad name="P5" x="5.08" y="0" drill="1"/>
+<pad name="P6" x="5.08" y="-2.54" drill="1"/>
+<pad name="P7" x="5.08" y="-5.08" drill="1"/>
+<pad name="P8" x="5.08" y="-7.62" drill="1"/>
+<pad name="P9" x="5.08" y="-10.16" drill="1"/>
+<text x="3.572" y="13.149665625" size="1.27" layer="25">&gt;NAME</text>
+<text x="3.572" y="-14.419665625" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="10.795" y1="-6.985" x2="10.795" y2="6.985" width="0.127" layer="51"/>
+<wire x1="10.795" y1="-6.985" x2="25.8064" y2="-6.985" width="0.127" layer="51"/>
+<wire x1="10.795" y1="6.985" x2="25.8064" y2="6.985" width="0.127" layer="51"/>
+<wire x1="25.8064" y1="-6.985" x2="25.8064" y2="6.985" width="0.127" layer="51"/>
+<wire x1="3.81" y1="11.557" x2="3.81" y2="-11.557" width="0.127" layer="51"/>
+<wire x1="3.81" y1="11.557" x2="27.8638" y2="11.557" width="0.127" layer="51"/>
+<wire x1="3.81" y1="-11.557" x2="27.8638" y2="-11.557" width="0.127" layer="51"/>
+<wire x1="27.8638" y1="11.557" x2="27.8638" y2="-11.557" width="0.127" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="7805THERMALPAD">
 <rectangle x1="-5.08" y1="-2.54" x2="5.08" y2="2.54" layer="94"/>
 <pin name="GND" x="-5.08" y="-7.62" length="middle" direction="pwr" rot="R90"/>
 <pin name="GND2" x="5.08" y="-7.62" length="middle" direction="pwr" rot="R90"/>
+</symbol>
+<symbol name="OPEN-SMARTTFCARDBREAKOUT">
+<pin name="DAT2" x="-17.78" y="10.16" length="middle"/>
+<pin name="CS" x="-17.78" y="7.62" length="middle" direction="in"/>
+<pin name="D1" x="-17.78" y="5.08" length="middle" direction="in"/>
+<pin name="VCC" x="-17.78" y="2.54" length="middle" direction="pwr"/>
+<pin name="SCLK" x="-17.78" y="0" length="middle" direction="in"/>
+<pin name="GND" x="-17.78" y="-2.54" length="middle" direction="pwr"/>
+<pin name="D0" x="-17.78" y="-5.08" length="middle"/>
+<pin name="DAT1" x="-17.78" y="-7.62" length="middle"/>
+<pin name="CON" x="-17.78" y="-10.16" length="middle"/>
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-10.16" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -4023,6 +4064,29 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <connects>
 <connect gate="G$1" pin="GND" pad="P$1 P$6 P$7 P$8 P$9 P$10"/>
 <connect gate="G$1" pin="GND2" pad="P$4 P$11 P$14 P$19 P$21 P$24"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="OPEN-SMARTTFCARDBREAKOUT">
+<gates>
+<gate name="G$1" symbol="OPEN-SMARTTFCARDBREAKOUT" x="15.24" y="-7.62"/>
+</gates>
+<devices>
+<device name="" package="OPEN-SMARTTFCARDBREAKOUT">
+<connects>
+<connect gate="G$1" pin="CON" pad="P9"/>
+<connect gate="G$1" pin="CS" pad="P2"/>
+<connect gate="G$1" pin="D0" pad="P7"/>
+<connect gate="G$1" pin="D1" pad="P3"/>
+<connect gate="G$1" pin="DAT1" pad="P8"/>
+<connect gate="G$1" pin="DAT2" pad="P1"/>
+<connect gate="G$1" pin="GND" pad="P6"/>
+<connect gate="G$1" pin="SCLK" pad="P5"/>
+<connect gate="G$1" pin="VCC" pad="P4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -4061,7 +4125,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <part name="X1" library="mini_din" deviceset="MINI_DIN_6" device=""/>
 <part name="12V_HDR" library="Connector" library_urn="urn:adsk.eagle:library:16378166" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="IC1" library="v-reg" library_urn="urn:adsk.eagle:library:409" deviceset="78XXL" device="" package3d_urn="urn:adsk.eagle:package:30361/1"/>
-<part name="IC2" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*245" device="N" package3d_urn="urn:adsk.eagle:package:16429/2" technology="LS"/>
+<part name="IC2" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*245" device="N" package3d_urn="urn:adsk.eagle:package:16429/2" technology="LS" value="74LVC245AN"/>
 <part name="V3" library="m-pad-2.1" deviceset="GND" device=""/>
 <part name="5V_HDR" library="Connector" library_urn="urn:adsk.eagle:library:16378166" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="V4" library="m-pad-2.1" deviceset="GND" device=""/>
@@ -4085,6 +4149,9 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <part name="U$1" library="my-library" deviceset="7085THERMALPAD" device=""/>
 <part name="V13" library="m-pad-2.1" deviceset="GND" device=""/>
 <part name="V14" library="m-pad-2.1" deviceset="GND" device=""/>
+<part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="7-B"/>
+<part name="D3" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="7-B"/>
+<part name="U$2" library="my-library" deviceset="OPEN-SMARTTFCARDBREAKOUT" device="" value="TF_CARD_BREAKOUT"/>
 </parts>
 <sheets>
 <sheet>
@@ -4423,6 +4490,15 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <instance part="V14" gate="GND" x="-60.96" y="-2.54" smashed="yes">
 <attribute name="VALUE" x="-62.865" y="-6.35" size="1.778" layer="96"/>
 </instance>
+<instance part="D2" gate="G$1" x="45.72" y="-81.28" smashed="yes" rot="R180">
+<attribute name="NAME" x="48.006" y="-83.185" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="48.006" y="-77.851" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="D3" gate="G$1" x="180.34" y="-83.82" smashed="yes" rot="R180">
+<attribute name="NAME" x="182.626" y="-85.725" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="182.626" y="-80.391" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$2" gate="G$1" x="205.74" y="-20.32" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -4491,7 +4567,12 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <segment>
 <pinref part="V5" gate="GND" pin="GND"/>
 <pinref part="5V_HDR" gate="G$1" pin="2"/>
-<wire x1="137.16" y1="-20.32" x2="114.3" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="-20.32" x2="132.08" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<wire x1="132.08" y1="-20.32" x2="114.3" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="-22.86" x2="132.08" y2="-22.86" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-22.86" x2="132.08" y2="-20.32" width="0.1524" layer="91"/>
+<junction x="132.08" y="-20.32"/>
 </segment>
 <segment>
 <pinref part="V4" gate="GND" pin="GND"/>
@@ -4848,26 +4929,32 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <junction x="86.36" y="-10.16"/>
 </segment>
 </net>
-<net name="KBD+33V" class="0">
+<net name="KBD_VCC" class="0">
 <segment>
 <wire x1="-45.72" y1="-73.66" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="DATA1" gate="-1" pin="S"/>
 <wire x1="27.94" y1="25.4" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="-68.58" x2="-7.62" y2="-73.66" width="0.1524" layer="91"/>
-<wire x1="-7.62" y1="-73.66" x2="-45.72" y2="-73.66" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="-73.66" x2="-45.72" y2="-73.66" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="20.32" x2="27.94" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="P" pin="VCC"/>
 <wire x1="27.94" y1="25.4" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
 <junction x="27.94" y="25.4"/>
+<pinref part="DATA1_HDR" gate="A" pin="2"/>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="25.4" y1="-81.28" x2="35.56" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-81.28" x2="43.18" y2="-81.28" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-81.28" x2="35.56" y2="-104.14" width="0.1524" layer="91"/>
+<junction x="35.56" y="-81.28"/>
+<wire x1="35.56" y1="-104.14" x2="-10.16" y2="-104.14" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="-104.14" x2="-10.16" y2="-73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="DATA1_33V1" class="0">
+<net name="DATA1_33V" class="0">
 <segment>
 <pinref part="DATA1" gate="-2" pin="S"/>
-<pinref part="DATA1_HDR" gate="A" pin="2"/>
 <wire x1="60.96" y1="-68.58" x2="60.96" y2="-81.28" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="-81.28" x2="25.4" y2="-81.28" width="0.1524" layer="91"/>
+<pinref part="D2" gate="G$1" pin="A"/>
+<wire x1="48.26" y1="-81.28" x2="60.96" y2="-81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="K17" class="0">
@@ -4961,7 +5048,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="40.64" y1="-63.5" x2="25.4" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="K181" class="0">
+<net name="H17" class="0">
 <segment>
 <pinref part="DATA1" gate="-12" pin="S"/>
 <wire x1="60.96" y1="-55.88" x2="43.18" y2="-55.88" width="0.1524" layer="91"/>
@@ -4970,7 +5057,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="43.18" y1="-66.04" x2="25.4" y2="-66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="J191" class="0">
+<net name="C20" class="0">
 <segment>
 <pinref part="DATA1" gate="-10" pin="S"/>
 <wire x1="60.96" y1="-58.42" x2="45.72" y2="-58.42" width="0.1524" layer="91"/>
@@ -4990,7 +5077,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="17.78" y1="-71.12" x2="25.4" y2="-71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G191" class="0">
+<net name="B19" class="0">
 <segment>
 <pinref part="DATA1" gate="-8" pin="S"/>
 <wire x1="60.96" y1="-60.96" x2="48.26" y2="-60.96" width="0.1524" layer="91"/>
@@ -5008,7 +5095,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="5.08" y1="-76.2" x2="25.4" y2="-76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G201" class="0">
+<net name="A20" class="0">
 <segment>
 <pinref part="DATA1" gate="-6" pin="S"/>
 <wire x1="60.96" y1="-63.5" x2="53.34" y2="-63.5" width="0.1524" layer="91"/>
@@ -5020,25 +5107,35 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <net name="DATA2_33V" class="0">
 <segment>
 <pinref part="DATA2" gate="-2" pin="S"/>
-<pinref part="DATA2_HDR" gate="A" pin="2"/>
 <wire x1="195.58" y1="-71.12" x2="195.58" y2="-83.82" width="0.1524" layer="91"/>
-<wire x1="195.58" y1="-83.82" x2="160.02" y2="-83.82" width="0.1524" layer="91"/>
+<pinref part="D3" gate="G$1" pin="A"/>
+<wire x1="182.88" y1="-83.82" x2="195.58" y2="-83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="L17" class="0">
+<net name="SD_CS" class="0">
 <segment>
 <pinref part="DATA2_HDR" gate="A" pin="16"/>
 <pinref part="DATA2" gate="-19" pin="S"/>
-<wire x1="127" y1="-48.26" x2="160.02" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="127" y1="-48.26" x2="147.32" y2="-48.26" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="CS"/>
+<wire x1="147.32" y1="-48.26" x2="160.02" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="187.96" y1="-12.7" x2="147.32" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="-12.7" x2="147.32" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="147.32" y="-48.26"/>
 </segment>
 </net>
-<net name="L20" class="0">
+<net name="SD_MOSI" class="0">
 <segment>
 <pinref part="DATA2" gate="-17" pin="S"/>
-<wire x1="127" y1="-50.8" x2="154.94" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="127" y1="-50.8" x2="149.86" y2="-50.8" width="0.1524" layer="91"/>
 <pinref part="DATA2_HDR" gate="A" pin="14"/>
+<wire x1="149.86" y1="-50.8" x2="154.94" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="-50.8" x2="154.94" y2="-53.34" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="-53.34" x2="160.02" y2="-53.34" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="D1"/>
+<wire x1="187.96" y1="-15.24" x2="149.86" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="-15.24" x2="149.86" y2="-50.8" width="0.1524" layer="91"/>
+<junction x="149.86" y="-50.8"/>
 </segment>
 </net>
 <net name="L19" class="0">
@@ -5059,22 +5156,32 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="147.32" y1="-63.5" x2="160.02" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="M20" class="0">
+<net name="SD_SCLK" class="0">
 <segment>
 <pinref part="DATA2" gate="-20" pin="S"/>
-<wire x1="195.58" y1="-48.26" x2="167.64" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="-48.26" x2="170.18" y2="-48.26" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="-48.26" x2="167.64" y2="-48.26" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="-48.26" x2="167.64" y2="-50.8" width="0.1524" layer="91"/>
 <pinref part="DATA2_HDR" gate="A" pin="15"/>
 <wire x1="167.64" y1="-50.8" x2="160.02" y2="-50.8" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="SCLK"/>
+<wire x1="187.96" y1="-20.32" x2="170.18" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="-20.32" x2="170.18" y2="-48.26" width="0.1524" layer="91"/>
+<junction x="170.18" y="-48.26"/>
 </segment>
 </net>
-<net name="M18" class="0">
+<net name="SD_MISO" class="0">
 <segment>
 <pinref part="DATA2" gate="-18" pin="S"/>
-<wire x1="195.58" y1="-50.8" x2="170.18" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="-50.8" x2="180.34" y2="-50.8" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="-50.8" x2="170.18" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="-50.8" x2="170.18" y2="-55.88" width="0.1524" layer="91"/>
 <pinref part="DATA2_HDR" gate="A" pin="13"/>
 <wire x1="170.18" y1="-55.88" x2="160.02" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="D0"/>
+<wire x1="187.96" y1="-25.4" x2="180.34" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="-25.4" x2="180.34" y2="-50.8" width="0.1524" layer="91"/>
+<junction x="180.34" y="-50.8"/>
 </segment>
 </net>
 <net name="L16" class="0">
@@ -5095,7 +5202,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="175.26" y1="-66.04" x2="160.02" y2="-66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="H17" class="0">
+<net name="K18" class="0">
 <segment>
 <pinref part="DATA2" gate="-12" pin="S"/>
 <wire x1="195.58" y1="-58.42" x2="177.8" y2="-58.42" width="0.1524" layer="91"/>
@@ -5104,7 +5211,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="177.8" y1="-68.58" x2="160.02" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="C20" class="0">
+<net name="J19" class="0">
 <segment>
 <pinref part="DATA2" gate="-10" pin="S"/>
 <wire x1="195.58" y1="-60.96" x2="180.34" y2="-60.96" width="0.1524" layer="91"/>
@@ -5124,7 +5231,7 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="152.4" y1="-73.66" x2="160.02" y2="-73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="B19" class="0">
+<net name="G19" class="0">
 <segment>
 <pinref part="DATA2" gate="-8" pin="S"/>
 <wire x1="195.58" y1="-63.5" x2="182.88" y2="-63.5" width="0.1524" layer="91"/>
@@ -5142,13 +5249,29 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <wire x1="139.7" y1="-78.74" x2="160.02" y2="-78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="A20" class="0">
+<net name="G20" class="0">
 <segment>
 <pinref part="DATA2" gate="-6" pin="S"/>
 <wire x1="195.58" y1="-66.04" x2="187.96" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="DATA2_HDR" gate="A" pin="3"/>
 <wire x1="187.96" y1="-66.04" x2="187.96" y2="-81.28" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="-81.28" x2="160.02" y2="-81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SD_VCC" class="0">
+<segment>
+<pinref part="DATA2_HDR" gate="A" pin="2"/>
+<pinref part="D3" gate="G$1" pin="C"/>
+<wire x1="160.02" y1="-83.82" x2="170.18" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="-83.82" x2="177.8" y2="-83.82" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="-83.82" x2="170.18" y2="-99.06" width="0.1524" layer="91"/>
+<junction x="170.18" y="-83.82"/>
+<wire x1="170.18" y1="-99.06" x2="236.22" y2="-99.06" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="-99.06" x2="236.22" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="-38.1" x2="175.26" y2="-38.1" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="-38.1" x2="175.26" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="VCC"/>
+<wire x1="175.26" y1="-17.78" x2="187.96" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -5159,14 +5282,16 @@ Warning: This is the KIT version of this package. This package has a smaller dia
 <approved hash="101,1,7.62,48.26,DATA3-2,S,,,,"/>
 <approved hash="101,1,-27.94,58.42,DATA3-9,S,,,,"/>
 <approved hash="101,1,-27.94,60.96,DATA3-11,S,,,,"/>
+<approved hash="101,1,-7.62,-68.58,DATA1-1,S,,,,"/>
 <approved hash="101,1,-7.62,-58.42,DATA1-9,S,,,,"/>
 <approved hash="101,1,127,-71.12,DATA2-1,S,,,,"/>
 <approved hash="101,1,127,-60.96,DATA2-9,S,,,,"/>
 <approved hash="104,1,119.38,17.78,X1,PE1,GND,,,"/>
 <approved hash="104,1,93.98,17.78,X1,PE3,GND,,,"/>
 <approved hash="104,1,106.68,12.7,X1,PE2,GND,,,"/>
-<approved hash="104,1,38.1,25.4,IC2P,VCC,KBD+33V,,,"/>
+<approved hash="104,1,38.1,25.4,IC2P,VCC,KBD_VCC,,,"/>
 <approved hash="104,1,-60.96,0,U$1,GND2,GND,,,"/>
+<approved hash="104,1,187.96,-17.78,U$2,VCC,SD_VCC,,,"/>
 <approved hash="113,1,106.68,23.5687,X1,,,,,"/>
 <approved hash="113,1,33.02,-14.7574,IC1,,,,,"/>
 <approved hash="113,1,21.8283,-66.2661,DATA1_HDR,,,,,"/>
